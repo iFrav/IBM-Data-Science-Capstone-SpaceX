@@ -2,30 +2,47 @@
 
 Final project for the IBM Applied Data Science Capstone.
 
-The project studies whether the Falcon 9 first stage will land successfully using an end-to-end data science workflow: data collection, wrangling, exploratory analysis, SQL, geospatial analytics, interactive dashboards, and classification.
+This repository studies whether the Falcon 9 first stage will land successfully using an end-to-end data science workflow: data collection, wrangling, exploratory analysis, SQL, geospatial analytics, an interactive dashboard, and classification.
 
-## Final report
+## Repository contents
 
-- `IBM_SpaceX_Capstone_Ruslan_Varfolomeev.pdf` - final PDF presentation submitted for grading
-- `IBM_SpaceX_Capstone_Ruslan_Varfolomeev.pptx` - editable PowerPoint version
+- `01_data_collection_api.ipynb` - SpaceX REST API collection
+- `01b_data_collection_web_scraping.ipynb` - historical launch data collection with web scraping
+- `02_data_wrangling.ipynb` - cleaning, missing values and landing target preparation
+- `03_eda_visualization.ipynb` - payload, flight, orbit and launch-site EDA
+- `04_eda_sql.ipynb` - SQL exploration and aggregations
+- `05_folium_analysis.ipynb` - geospatial launch-site analysis
+- `06_machine_learning.ipynb` - Logistic Regression, SVM, Decision Tree and KNN comparison
+- `spacex_dash_app.py` - interactive Plotly Dash application
 
 ## Project workflow
 
-1. Data collection using the SpaceX API and web scraping
-2. Data wrangling and preparation of the binary landing target
-3. Exploratory data analysis with visualization and SQL
-4. Interactive geospatial analysis with Folium
-5. Interactive dashboarding with Plotly Dash
-6. Classification using Logistic Regression, SVM, Decision Tree, and KNN
+1. Collect historical launch data using the SpaceX API and web scraping.
+2. Clean and transform the data and create the binary landing target.
+3. Explore launch outcomes using visualization and SQL.
+4. Analyze launch-site geography with Folium.
+5. Explore site and payload effects interactively with Plotly Dash.
+6. Standardize engineered features, tune classifiers with cross-validation, and evaluate on held-out test data.
 
-## Main result
+## Main results
 
-In the analyzed course dataset, the tuned classifiers reached 83.3% accuracy on the held-out test set. Decision Tree achieved the highest cross-validation score at approximately 87.3%.
+In the course dataset used for the final report:
+
+- Logistic Regression: 84.6% cross-validation accuracy, 83.3% test accuracy
+- SVM: 84.8% cross-validation accuracy, 83.3% test accuracy
+- Decision Tree: 87.3% cross-validation accuracy, 83.3% test accuracy
+- KNN: 84.8% cross-validation accuracy, 83.3% test accuracy
+
+Decision Tree achieved the highest cross-validation score, while all four tuned classifiers tied on the held-out test set. The analysis also showed strong relationships between landing success and operational maturity, launch site, orbit, payload, reuse and recovery hardware.
+
+## Selected SQL findings
+
+- NASA (CRS) total payload in the course dataset: 45,596 kg
+- Average payload for F9 v1.1: 2,928.4 kg
+- First successful ground-pad landing: 2015-12-22
 
 ## Author
 
 Ruslan Varfolomeev
 
 GitHub: https://github.com/iFrav
-
-> Note: the completed lab notebooks and Python source files should be added to this repository as the corresponding capstone labs are exported from the course environment.
